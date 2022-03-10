@@ -11,7 +11,7 @@ import { faMinus } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./phone-detail.component.css']
 })
 export class PhoneDetailComponent implements OnInit {
-  phoneId = '';
+  phoneId: any = '';
   productList: any[];
   chosenPhone: any = '';
   faCheck = faCheck;
