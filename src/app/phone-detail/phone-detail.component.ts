@@ -18,6 +18,7 @@ export class PhoneDetailComponent implements OnInit {
   faMinus = faMinus;
   newImageString: any = '';
   allReady = false;
+  data:any = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -36,7 +37,7 @@ export class PhoneDetailComponent implements OnInit {
       // tslint:disable-next-line: no-string-literal
       this.phoneId = params['id'];
     });
-    this.phonoService.getProduct(this.phoneId).subscribe((data => {
+    this.phonoService.getProduct(this.phoneId).subscribe(((data:any) => {
       this.chosenPhone = data;
       this.allReady = true;
     }));
