@@ -1,0 +1,36 @@
+.pointer {
+    cursor: pointer;
+}
+
+.bold {
+    font-weight: 700;
+    padding-right: 10px;
+}
+
+.hr {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        background-color: lightblue;
+    }
+    .hr-parent {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .hr {
+        display: block;
+        flex-shrink: unset;
+        max-width: unset;
+        padding-right: unset;
+        padding-left: unset;
+        margin-top: unset;
+        margin: 1rem 0;
+        color: inherit;
+        background-color: currentColor;
+        border: 0;
+        opacity: .25;
+        box-sizing: content-box;
+    }
+}

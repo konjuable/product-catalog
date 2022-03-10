@@ -1,0 +1,37 @@
+<article class="container-fluid">
+    <h1>Tuoteluettelo</h1>
+    <div class="row">
+        <aside class="col-md-3 mb-3">
+            <div class="form-group">
+                <label for="search-text">Search:</label>
+                <input class="form-control" type="text" id="search-text" aria-describedby="search-text" autocomplete="off" placeholder="Search..." [(ngModel)]="searchText">
+            </div>
+            <p>Sort By:</p>
+            <select (change)="selectChangeHandler($event)" class="mb-3">
+                <option value="age" selected>Newest</option>
+                <option value="name">Alphabetically</option>
+            </select>
+        </aside>
+        <section class="col-md-9">
+            <ul>
+                <li class="phones" *ngFor="let phone of productList | filter:searchText | orderBy: order">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <figure>
+                                    <img class="img-fluid" src="../../assets/{{ phone.imageUrl }}" alt="phone image">
+                                </figure>
+                            </div>
+                            <div class="col-md-8">
+                                <h2>
+                                    <a routerLink="{{ '/item/' + phone.id }}">{{ phone.name }}</a>
+                                </h2>
+                                <p>{{ phone.snippet }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+</article>

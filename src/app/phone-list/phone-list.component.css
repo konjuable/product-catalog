@@ -1,0 +1,23 @@
+.phones {
+    list-style: none;
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.no-bullets {
+    list-style: none;
+}
+
+a {
+    color: darkred;
+    font-style: italic;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    font-weight: 700;
+    cursor: pointer;
+}

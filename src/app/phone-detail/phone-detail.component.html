@@ -1,0 +1,70 @@
+<div class="container phone-detail-main" *ngIf="allReady">
+    <div class="row">
+
+        <div class="col-xl-3">
+            <article class="phone-detail-big-image">
+                <figure>
+                    <img class="img-fluid" id="view-img" src="{{ 'assets/img/phones/' + phoneId + '.0.jpg' }}" alt="{{ chosenPhone.name }}">
+                </figure>
+            </article>
+        </div>
+
+        <div class="col-xl-9">
+            <article class="phone-item-info">
+                <h1 id="name">{{ chosenPhone.name }}</h1>
+                <hr>
+                <p id="description">{{ chosenPhone.description }}</p>
+                <hr>
+                <div class="container">
+                    <div class="row">
+
+                        <section class="show-images col-4" *ngFor="let image of chosenPhone.images">
+                            <figure class="phone-item-info-small-image">
+                                <img (click)="changeImg($event)" src="{{ 'assets/' + image }}" alt="{{ phoneId }}" class="pointer img-fluid">
+                            </figure>
+                        </section>
+
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <hr>
+</div>
+<!-- Tekniset tiedost alkavat tästä -->
+<div class="container">
+    <div class="row hr-parent">
+        <section class="col-md-3">
+            <h3>Availability and Networks</h3>
+            <p>{{ chosenPhone.availability }}</p>
+        </section>
+        <hr class="hr">
+        <section class="col-md-3">
+            <h3>Battery</h3>
+            <h4>Type</h4>
+            <p>{{ chosenPhone.battery.type }}</p>
+            <h4>Talk Time</h4>
+            <p>{{ chosenPhone.battery.talkTime }}</p>
+            <h4>Standby time (max)</h4>
+            <p>{{ chosenPhone.battery.standbyTime }}</p>
+        </section>
+        <hr class="hr">
+        <section class="col-md-3">
+            <h3>Storage and Memory</h3>
+            <h4>RAM</h4>
+            <p>{{ chosenPhone.storage.ram }}</p>
+            <h4>Internal Storage</h4>
+            <p>{{ chosenPhone.storage.flash }}</p>
+        </section>
+        <hr class="hr">
+        <section class="col-md-3">
+            <h3>Connectivity</h3>
+            <h4>Network support</h4>
+            <p><span class="bold">WiFi:</span>{{ chosenPhone.connectivity.wifi }} </p>
+            <p><span class="bold">Bluetooth:</span>{{ chosenPhone.connectivity.bluetooth }} </p>
+            <p><span class="bold">Infrared:</span>{{ chosenPhone.connectivity.infrared }} </p>
+            <p><span class="bold">GPS:</span>{{ chosenPhone.connectivity.gps }} </p>
+        </section>
+        <hr class="hr">
+    </div>
+</div>
