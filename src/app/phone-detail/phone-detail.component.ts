@@ -16,7 +16,7 @@ export class PhoneDetailComponent implements OnInit {
   chosenPhone: any = '';
   faCheck = faCheck;
   faMinus = faMinus;
-  newImageString = '';
+  newImageString: any = '';
   allReady = false;
 
   constructor(
